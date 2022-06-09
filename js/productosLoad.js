@@ -1,4 +1,5 @@
 
+
 // Variables globales
 const valorIva = 1.21;
 const valorMinimoDeSalsa = 100;
@@ -58,42 +59,43 @@ function agregarProducto(imagenProducto, tituloProducto, descripcionProducto, pi
 
 
     if(isEmpty(tituloProducto)){
-        console.log("Error. No se completó nombre.");
+        errorAlert('Error. No se completó el nombre. Completar nombre.');
     } else
 
     if(isEmpty(descripcionProducto))
     {
-        console.log("Error. No se completó descripción. Completar descripción.");
+
+        errorAlert("Error. No se completó descripción. Completar descripción.");
 
     } else
 
     if(!validarRatingPicante(picorProducto)){
-        console.log("Calificación de picor ingresada incorrecta. Elegir un valor entre 0 y 9.");
+        errorAlert("Calificación de picor ingresada incorrecta. Elegir un valor entre 0 y 9.");
     } else
 
     if(isEmpty(picorProducto))
     {
-        console.log("Error. No se completó calificación de picante. Completar calificación de picante del 1 al 9.");
+        errorAlert("Error. No se completó calificación de picante. Completar calificación de picante del 1 al 9.");
     } else
 
     if(isEmpty(tipoDeAji))
     {
-        console.log("Error. No se completó tipo de ají. Completar tipo de ají.");
+        errorAlert("Error. No se completó tipo de ají. Completar tipo de ají.");
     } else
 
     if(!validarPrecio(precioProducto)){
 
-        console.log("Precio incorrecto. No es un número o el valor es menor a "+valorMinimoDeSalsa);
+        errorAlert("Precio incorrecto. No es un número o el valor es menor a "+valorMinimoDeSalsa);
  
     } else
 
     
     if(isNaN(stockProducto))
     {
-        console.log("Error. No se completó stock disponible o no es un número. Completar stock disponible.");
+        errorAlert("Error. No se completó stock disponible o no es un número. Completar stock disponible.");
     } else
     {
-    console.log("Carga exitosa");
+    cargaExitosa("Los datos se han guardado correctamente.");
     productos.push(new Producto(generadorDeID(tituloProducto), imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAji, precioProducto, stockProducto));
     localStorage.setItem("listaProductos", JSON.stringify(productos));
 }
@@ -107,6 +109,26 @@ function isEmpty(content){
         return false;
     }
 
+}
+
+// Alertas de error
+function errorAlert(texto){
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: texto,
+        confirmButtonText: 'Continuar'
+      })
+}
+
+// Alerta carga exitosa
+function cargaExitosa(texto){
+    Swal.fire({
+        icon: 'success',
+        title: 'Carga exitosa',
+        text: texto,
+        confirmButtonText: 'Continuar'
+      })
 }
 
 // Valida el rating de picor que tiene el producto. No puede ser menor que 0 o mayor que 9 //
