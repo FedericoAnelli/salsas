@@ -1,3 +1,4 @@
+
 // Variables globales
 const valorIva = 1.21;
 const valorMinimoDeSalsa = 100;
@@ -57,7 +58,6 @@ function agregarProducto(imagenProducto, tituloProducto, descripcionProducto, pi
 
 
     if(isEmpty(tituloProducto)){
-        console.log(tituloProducto);
         console.log("Error. No se completó nombre.");
     } else
 

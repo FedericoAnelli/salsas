@@ -1,5 +1,6 @@
 // Elementos DOM
 let gondolaHomepage = document.getElementById("gondolaHomepage");
+let seccionCompras = document.getElementById("seccionCompras");
 let popUpProduct = document.getElementById("popUpProduct");
 let popUpProductImagen = document.getElementById("popUpProductImagen");
 let popUpProductTitulo = document.getElementById("popUpProductTitulo");
@@ -92,6 +93,8 @@ for (let i=0; i<productos.length; i++){
         popUpProduct.style.opacity = "100%";
         popUpProduct.style.zIndex = "5";
 
+        seccionCompras.style.filter = "brightness(50%)";
+
     });
 
 
@@ -103,5 +106,7 @@ closeButtonIcon.addEventListener("click", ()=>{
 
     popUpProduct.style.opacity = "0%";
     popUpProduct.style.zIndex = "-1";
+    seccionCompras.style.filter = "brightness(100%)";
+
 
 });
