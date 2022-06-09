@@ -9,6 +9,8 @@ let popUpProductDescripcion = document.getElementById("popUpProductDescripcion")
 let popUpProductAji = document.getElementById("popUpProductAji");
 let closeButtonIcon = document.getElementById("closeButtonIcon");
 
+
+
 // Colección de productos
 let productos = JSON.parse(localStorage.getItem("listaProductos"));
 
@@ -89,12 +91,14 @@ for (let i=0; i<productos.length; i++){
         popUpProductDescripcion.innerHTML = productos[i].descripcionProducto;
         popUpProduct.style.opacity = "100%";
         popUpProduct.style.zIndex = "5";
+
     });
 
 
     gondolaHomepage.appendChild(producto);
 }
 
+// Boton de cierre de ventana emergente
 closeButtonIcon.addEventListener("click", ()=>{
 
     popUpProduct.style.opacity = "0%";
