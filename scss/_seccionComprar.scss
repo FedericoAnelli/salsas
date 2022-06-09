@@ -22,7 +22,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 0;
     column-gap: 0;
 }
@@ -32,4 +32,55 @@
     height: 100%;
     width: 100%;
     background-color: blue;
+}
+
+// Grilla tarjeta de producto
+.comprarCard{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    row-gap: 0;
+    column-gap: 0;
+    &--Imagen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+    }
+    &--Producto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        font-size: large;
+        font-weight: bolder;
+    }
+    &--Precio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        font-size: medium;
+        font-weight: lighter;
+    }
+    &--agregarAlCarrito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+    }
+}
+
+.comprarBotonVerMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
 }
