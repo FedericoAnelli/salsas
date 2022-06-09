@@ -1,10 +1,13 @@
 // Contenedor general seccion COMPRAR
 .comprarContenedorGeneral{
     @include defaultContainerSeccion;
+    position: relative;
+    z-index: 1;
 }
 
 // Espacio de la seccion donde volcar contenido
 .comprarSeccionPrincipal{
+    position: relative;
     margin: $headerSpace 0 $margenBottom 0 !important;
     background-color: $colorRojo;
     display: grid;
@@ -14,11 +17,12 @@
     grid-template-rows: 90% 10%;
     row-gap: 0;
     column-gap: 0;
+    overflow: hidden;
 }
 
 // Grilla para la seccion de COMPRAS de la homepage
 .comprarGrillaProductos{
-    position: relative;
+
     height: 100%;
     width: 100%;
     display: grid;
@@ -26,6 +30,8 @@
     grid-template-rows: repeat(2, 50%);
     row-gap: 0;
     column-gap: 0;
+    overflow: hidden;
+    z-index: 1;
 }
 
 // Rectángulo VER MÁS
@@ -52,6 +58,7 @@
     align-items: center;
     justify-items: center;
     align-content: center;
+    z-index: 1;
     &--Imagen{
         max-width: 100%;
         max-height: 100%;
@@ -92,6 +99,7 @@
     align-items: center;
     justify-items: center;
     align-content: center;
+    z-index: 1;
     &--verMas{
         background-color: blue;
         color: $colorBlanco;
@@ -116,8 +124,70 @@
         font-weight: bold;
         cursor: pointer;
         user-select: none;
+        z-index: 10;
     }
     &--agregarAlCarrito:hover{
         transform: scale(1.1);
     }
 }   
+
+// Estilo para detalle de producto
+$cardWidth: 90%;
+.comprarDetalleProducto
+{
+    background-color: rgba(255, 255, 255, 0.800);
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    left: 20%;
+    height: 75%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 30% 10% 4% 4% 4% 27% 8%;
+    row-gap: 1%;
+    column-gap: 0px;
+    border-radius: 12px;
+    justify-items: center;
+    backdrop-filter: blur(6px);
+    &--Imagen{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+
+    }
+    &--Titulo{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+    }
+    &--Precio{
+        width: $cardWidth;
+        height: 100%;
+
+    }
+    &--TipoAji{
+        width: $cardWidth;
+        height: 100%;
+
+    }
+    &--Picor{
+        width: $cardWidth;
+        height: 100%;
+
+    }
+    &--Descripcion{
+        width: $cardWidth;
+        height: 100%;
+    }
+}
+
+.closeButton{
+    height: 100%;
+    width: 100%;
+    padding-right: 1% !important;
+    display: flex;
+    justify-content: flex-end;
+}

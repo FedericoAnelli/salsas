@@ -1,5 +1,13 @@
 // Elementos DOM
 let gondolaHomepage = document.getElementById("gondolaHomepage");
+let popUpProduct = document.getElementById("popUpProduct");
+let popUpProductImagen = document.getElementById("popUpProductImagen");
+let popUpProductTitulo = document.getElementById("popUpProductTitulo");
+let popUpProductPrecio = document.getElementById("popUpProductPrecio");
+let popUpProductPicor = document.getElementById("popUpProductPicor");
+let popUpProductDescripcion = document.getElementById("popUpProductDescripcion");
+let popUpProductAji = document.getElementById("popUpProductAji");
+let closeButtonIcon = document.getElementById("closeButtonIcon");
 
 // Colección de productos
 let productos = JSON.parse(localStorage.getItem("listaProductos"));
@@ -71,6 +79,26 @@ for (let i=0; i<productos.length; i++){
     agregarAlCarrito.innerHTML = "AGREGAR AL CARRITO";
     producto.appendChild(agregarAlCarrito);
 
+    producto.addEventListener("click", ()=>{
+
+        popUpProductImagen.setAttribute("src", productos[i].imagenProducto);
+        popUpProductTitulo.innerHTML = productos[i].tituloProducto;
+        popUpProductAji.innerHTML = "Tipo de Ají: "+productos[i].tipoDeAji;
+        popUpProductPrecio.innerHTML = "$"+productos[i].precioProducto;
+        popUpProductPicor.innerHTML = "Picor: "+productos[i].picorProducto;
+        popUpProductDescripcion.innerHTML = productos[i].descripcionProducto;
+
+        popUpProduct.style.opacity = "100%";
+        popUpProduct.style.zIndex = "5";
+    });
+
+
     gondolaHomepage.appendChild(producto);
 }
 
+closeButtonIcon.addEventListener("click", ()=>{
+
+    popUpProduct.style.opacity = "0%";
+    popUpProduct.style.zIndex = "-1";
+
+});
