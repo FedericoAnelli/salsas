@@ -87,7 +87,6 @@ for (let i=0; i<productos.length; i++){
         popUpProductPrecio.innerHTML = "$"+productos[i].precioProducto;
         popUpProductPicor.innerHTML = "Picor: "+productos[i].picorProducto;
         popUpProductDescripcion.innerHTML = productos[i].descripcionProducto;
-
         popUpProduct.style.opacity = "100%";
         popUpProduct.style.zIndex = "5";
     });
