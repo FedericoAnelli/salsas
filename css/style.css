@@ -1,6 +1,6 @@
 .headerMainContainer {
   position: fixed;
-  height: 25vh;
+  height: 10%;
   color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,6 +62,42 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.comprarSeccionPrincipal {
+  margin: 10% 0 2% 0 !important;
+  background-color: red;
+  display: -ms-grid;
+  display: grid;
+  height: calc(100%-$headerSpace);
+  width: 100%;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 10fr 1fr;
+      grid-template-rows: 10fr 1fr;
+  row-gap: 0;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+}
+
+.comprarGrillaProductos {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  row-gap: 0;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+}
+
+.comprarVerMas {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
 }
 
 .contactoContenedorGeneral {

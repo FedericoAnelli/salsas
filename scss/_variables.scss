@@ -1,12 +1,14 @@
 // Configuracion general
-$headerSpace: 25vh;
-
+$headerSpace: 10%;
+$margenBottom: 2%;
+$heightContentSections: calc(100%-$headerSpace);
 
 // Colores
 $colorVerde: green;
 $colorNegro: black;
 $colorAmarillo: yellow;
 $colorBlanco: white;
+$colorRojo: red;
 
 // Fonts
 $fontColorMain: black;
@@ -17,4 +19,5 @@ $fontColorMain: black;
     height: 100vh;
     max-width: 100vw;
     display: flex;
+
 }

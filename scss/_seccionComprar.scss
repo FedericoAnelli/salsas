@@ -2,3 +2,34 @@
 .comprarContenedorGeneral{
     @include defaultContainerSeccion;
 }
+
+// Espacio de la seccion donde volcar contenido
+.comprarSeccionPrincipal{
+    margin: $headerSpace 0 $margenBottom 0 !important;
+    background-color: $colorRojo;
+    display: grid;
+    height: $heightContentSections;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10fr 1fr;
+    row-gap: 0;
+    column-gap: 0;
+}
+
+// Grilla para la seccion de COMPRAS de la homepage
+.comprarGrillaProductos{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 0;
+    column-gap: 0;
+}
+
+// Rectángulo VER MÁS
+.comprarVerMas{
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+}
