@@ -1,0 +1,55 @@
+// Contenedor general seccion CARGA
+.cargaContenedorGeneral{
+    @include defaultContainerSeccion;
+}
+
+// Espacio de la seccion donde volcar contenido
+.cargaSeccionPrincipal{
+    margin: $headerSpace 0 $margenBottom 0 !important;
+    background-color: $colorRojo;
+    display: grid;
+    height: $heightContentSections;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    row-gap: 2%;
+    column-gap: 2%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    user-select: none;
+}
+
+// Estilo para campos de carga
+.cargaCampoTextoEstilo{
+    display: flex;
+    width: 50%;
+    border-radius: 12px;
+    margin-right: 50% !important;
+    padding-left: 2% !important;
+}
+
+// Estilo para textos de carga
+.cargaLabelDeCarga{
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+// Boton para cargar
+.cargaBoton{
+    margin-top: 5% !important;
+    grid-column:  2 span;
+    width: 30%;
+    height: 50%;
+    background-color: blue;
+    color: $colorBlanco;
+    border-radius: 12px;
+    transition: transform 0.5s;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cargaBoton:hover{
+    transform: scale(1.1);
+}
