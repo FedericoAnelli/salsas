@@ -97,7 +97,21 @@
 .comprarVerMas {
   height: 100%;
   width: 100%;
-  background-color: blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .comprarCard {
@@ -163,7 +177,7 @@
   font-weight: lighter;
 }
 
-.comprarCard--agregarAlCarrito {
+.comprarBotones {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,7 +192,30 @@
       align-content: center;
 }
 
-.comprarBotonVerMas {
+.comprarBotones--verMas {
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  width: 15%;
+  height: 70%;
+  border-radius: 12px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.comprarBotones--verMas:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.comprarBotones--agregarAlCarrito {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

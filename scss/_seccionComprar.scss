@@ -31,7 +31,11 @@
 .comprarVerMas{
     height: 100%;
     width: 100%;
-    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 // Grilla tarjeta de producto
@@ -68,6 +72,29 @@
         font-size: medium;
         font-weight: lighter;
     }
+}
+
+// Estilos de botones
+.comprarBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    &--verMas{
+        background-color: blue;
+        color: $colorBlanco;
+        font-weight: bolder;
+        width: 15%;
+        height: 70%;
+        border-radius: 12px;
+        transition: transform 0.5s;
+        cursor: pointer;
+        user-select: none;
+    }
+    &--verMas:hover{
+        transform: scale(1.1);
+    }
     &--agregarAlCarrito{
         display: flex;
         justify-content: center;
@@ -75,12 +102,4 @@
         justify-items: center;
         align-content: center;
     }
-}
-
-.comprarBotonVerMas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-}
+}   
