@@ -1,9 +1,14 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,CAAC,CAAA;EACG,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;CACZ",
+    "mappings": "AECA,AAAA,oBAAoB,CAAA;EAChB,QAAQ,EAAE,KAAK;EACf,MAAM,EDFI,IAAI;ECGd,KAAK,EDOO,KAAK;ECNjB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,MAAM;EACrB,aAAa,EAAE,MAAM;EACrB,KAAK,EAAE,IAAI;CACd;;AAGD,AAAA,eAAe,CAAA;EACX,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,CAAC;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,MAAM;EACrB,aAAa,EAAE,MAAM;CACxB;;ACrBD,AAAA,+BAA+B,CAAA;EFc3B,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;CEdhB;;ACHD,AAAA,yBAAyB,CAAA;EHerB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,IAAI;CGfhB;;AJID,AAAA,CAAC,CAAA;EACG,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,MAAM,EAAE,CAAC;CACZ;;AAED,AAAA,IAAI,CAAA;EACA,SAAS,EAAE,KAAK;CACnB;;AAED,AAAA,EAAE,CAAA;EACE,eAAe,EAAE,IAAI;CACxB",
     "sources": [
         "../scss/style.scss",
-        "../scss/_variables.scss"
+        "../scss/_variables.scss",
+        "../scss/_header.scss",
+        "../scss/_seccionSobreNosotros.scss",
+        "../scss/_seccionComprar.scss",
+        "../scss/_seccionContacto.scss",
+        "../scss/_carritoDeCompras.scss"
     ],
     "names": [],
     "file": "style.css"

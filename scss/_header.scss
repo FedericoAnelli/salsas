@@ -1,0 +1,24 @@
+// Contenedor general del header
+.headerMainContainer{
+    position: fixed;
+    height: $headerSpace;
+    color: $fontColorMain;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+// Menu grid
+.headerMenuGrid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 0;
+    column-gap: 0;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
