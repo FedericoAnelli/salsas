@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <base id="base" href="http://127.0.0.1:5500" target="_self">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Salsas Picantes - Comprar</title>
+</head>
+<body class="customBodyComprar">
+    
+    <!-- ################ HEADER  ################ -->
+    <header class="headerMainContainer">
+
+        <ul class="headerMenuGrid">
+            <li></li>
+            <li><a href="/index.html#">HOME</a></li>
+            <li><a href="/index.html#sobreNosotros">SOBRE NOSOTROS</a></li>
+            <li><a href="#">COMPRAR</a></li>
+            <li><a href="/index.html#contacto">CONTACTANOS</a></li>
+            <li><span class="material-symbols-outlined">
+                shopping_cart
+                </span></li>
+        </ul>
+
+
+    </header>
+    <!-- ################ HEADER  ################ -->
+
+
+        <!-- ################ COMPRAR  ################ -->
+        <div id="comprar" class="comprarContenedorExtendido">
+            <div class="comprarExtendida">
+                <div id="popUpProduct" class="comprarDetalleProducto">
+                    <div id="closeButtonComprar" class="closeButton"><span id="closeButtonIcon" class="material-symbols-outlined">
+                        close
+                        </span></div>
+                    
+                    <img id="popUpProductImagen" class="comprarDetalleProducto--Imagen" src="/media/fotosSalsas/tabasco.webp" alt="Tabasco">
+                    <h2 id="popUpProductTitulo" class="comprarDetalleProducto--Titulo">TABASCO</h2>
+                    <p id="popUpProductPrecio" class="comprarDetalleProducto--Precio">Precio: $850</p>
+                    <p id="popUpProductAji" class="comprarDetalleProducto--TipoAji">Tipo de Ají: Habanero</p>
+                    <p id="popUpProductPicor" class="comprarDetalleProducto--Picor">Picor: 4/9</p>
+                    <p id="popUpProductDescripcion" class="comprarDetalleProducto--Descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ratione dolores ut quo quae rem quidem inventore? Officia ea soluta, architecto laudantium odit qui, distinctio sequi sint eos deleniti a!</p>
+                    <button class="comprarBotones--agregarAlCarrito comprarDetalleProducto--agregarAlCarrito">AGREGAR AL CARRITO</button>
+        
+        
+        
+                </div>
+
+                <div id="gondolaHomepage" class="comprarGrillaProductosExtendida">
+    
+                </div>
+            </div>
+        </div>
+        <!-- ################ COMPRAR  ################ -->
+
+
+
+
+    <script src="./js/productosRetrieve.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
