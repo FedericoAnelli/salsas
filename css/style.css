@@ -71,10 +71,10 @@
   display: grid;
   height: calc(100%-$headerSpace);
   width: 100%;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 10fr 1fr;
-      grid-template-rows: 10fr 1fr;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 90% 10%;
+      grid-template-rows: 90% 10%;
   row-gap: 0;
   -webkit-column-gap: 0;
           column-gap: 0;

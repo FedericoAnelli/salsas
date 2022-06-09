@@ -10,8 +10,8 @@
     display: grid;
     height: $heightContentSections;
     width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10fr 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 90% 10%;
     row-gap: 0;
     column-gap: 0;
 }

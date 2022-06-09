@@ -1,20 +1,31 @@
+// Variables globales
+const valorIva = 1.21;
+const valorMinimoDeSalsa = 100;
+
 // Elementos DOM
-let gondolaHomepage = document.getElementById("gondolaHomepage");
+let botonCarga = document.getElementById("cargarArticulo");
+let inputName = document.getElementById("inputName");
+let inputDescription = document.getElementById("inputDescription");
+let inputRating = document.getElementById("inputRating");
+let inputPepperType = document.getElementById("inputPepperType");
+let inputPrice = document.getElementById("inputPrice");
+let inputStock = document.getElementById("inputStock");
 
 // Colección de productos
 let productos = [];
+if (localStorage.getItem('listaProductos')){productos = JSON.parse(localStorage.getItem('listaProductos'));}
 
 // Objetos
 class Producto{
-    constructor(idProducto, imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAjí, precioProducto, stockProducto){
+    constructor(idProducto, imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAji, precioProducto, stockProducto){
 
         this.idProducto = idProducto;
         this.imagenProducto = imagenProducto;
         this.tituloProducto = tituloProducto;
         this.descripcionProducto = descripcionProducto;
-        this.picorProducto = picorProducto;
-        this.tipoDeAjí = tipoDeAjí;
-        this.precioProducto = precioProducto;
+        this.picorProducto = parseFloat(picorProducto);
+        this.tipoDeAji = tipoDeAji;
+        this.precioProducto = parseFloat(precioProducto);
         this.stockProducto = stockProducto;
 
     }
@@ -27,7 +38,6 @@ agregarProducto("/media/fotosSalsas/yucatecoChipotle.webp", "Yucateco Chipotle",
 agregarProducto("/media/fotosSalsas/yucatecoVerde.webp", "Yucateco Jalapeño", "Para los fanáticos del chipotle en todas variedades, la famosa salsa Chipotle de Yucateco. Con el clásico sabor ahumado de todos los chipotles <br> Elaborada a base de chiles chipotles ahumados al natural y jarabe de maíz. Lo que ha dado como resultado una mezcla de sabores picantes y agridulces que seguramente provocarán todos sus sentidos. <br> Usala para marinar unas fajitas de pollo o para preparar un delicioso dip para camarones, verduras y más.", 3, "Chipotle", 830, 50);
 
 
-
 // Genera IDs automaticamente
 function generadorDeID(nombreProducto)
 {
@@ -37,21 +47,61 @@ function generadorDeID(nombreProducto)
     return newID;
 }
 
-
-
-
-
-
-
 // Agrega producto al arreglo
-function agregarProducto(imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAjí, precioProducto, stockProducto){
+function agregarProducto(imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAji, precioProducto, stockProducto){
+
+
+    picorProducto = parseFloat(picorProducto);
+    precioProducto = parseFloat(precioProducto);
+    stockProducto = parseInt(stockProducto);
+
+
+    if(isEmpty(tituloProducto)){
+        console.log(tituloProducto);
+        console.log("Error. No se completó nombre.");
+    } else
+
+    if(isEmpty(descripcionProducto))
+    {
+        console.log("Error. No se completó descripción. Completar descripción.");
+
+    } else
+
+    if(!validarRatingPicante(picorProducto)){
+        console.log("Calificación de picor ingresada incorrecta. Elegir un valor entre 0 y 9.");
+    } else
+
+    if(isEmpty(picorProducto))
+    {
+        console.log("Error. No se completó calificación de picante. Completar calificación de picante del 1 al 9.");
+    } else
+
+    if(isEmpty(tipoDeAji))
+    {
+        console.log("Error. No se completó tipo de ají. Completar tipo de ají.");
+    } else
+
+    if(!validarPrecio(precioProducto)){
+
+        console.log("Precio incorrecto. No es un número o el valor es menor a "+valorMinimoDeSalsa);
+ 
+    } else
+
     
-    productos.push(new Producto(generadorDeID(tituloProducto), imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAjí, precioProducto, stockProducto));
+    if(isNaN(stockProducto))
+    {
+        console.log("Error. No se completó stock disponible o no es un número. Completar stock disponible.");
+    } else
+    {
+    console.log("Carga exitosa");
+    productos.push(new Producto(generadorDeID(tituloProducto), imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAji, precioProducto, stockProducto));
+    localStorage.setItem("listaProductos", JSON.stringify(productos));
+}
 }
 
 // Checkea campos vacíos
 function isEmpty(content){
-    if (variable.length == 0){
+    if (content.length == 0){
         return true;
     }else{
         return false;
@@ -59,44 +109,36 @@ function isEmpty(content){
 
 }
 
-
-
-// Completa grilla en home
-for (let i=0; i<productos.length; i++){
-    
-    // Crea DIV del producto
-    let producto = document.createElement("div");
-    producto.id = productos[i].idProducto;
-    producto.className = "comprarCard";
-
-    // Asigna imagen del producto
-    let imagenProducto = document.createElement("img");
-    imagenProducto.id = productos[i].idProducto + "_Imagen";
-    imagenProducto.className = "comprarCard--Imagen";
-    imagenProducto.setAttribute("src", productos[i].imagenProducto);
-    producto.appendChild(imagenProducto);
-
-    // Asigna titulo del producto
-    let tituloProducto = document.createElement("h2");
-    tituloProducto.id = productos[i].idProducto + "_Titulo";
-    tituloProducto.className = "comprarCard--Producto";
-    tituloProducto.innerHTML = productos[i].tituloProducto;
-    producto.appendChild(tituloProducto);
-
-    // Asigna precio del producto
-    let precioProducto = document.createElement("p");
-    precioProducto.id = productos[i].idProducto + "_Precio";
-    precioProducto.className = "comprarCard--Precio";
-    precioProducto.innerHTML = "$"+productos[i].precioProducto;
-    producto.appendChild(precioProducto);
-
-    // Asigna boton agregar al carrito del producto
-    let agregarAlCarrito = document.createElement("button");
-    agregarAlCarrito.id = productos[i].idProducto + "_Precio";
-    agregarAlCarrito.className = "comprarBotones--agregarAlCarrito";
-    agregarAlCarrito.innerHTML = "AGREGAR AL CARRITO";
-    producto.appendChild(agregarAlCarrito);
-
-    gondolaHomepage.appendChild(producto);
+// Valida el rating de picor que tiene el producto. No puede ser menor que 0 o mayor que 9 //
+function validarRatingPicante(rating)
+{
+    if (isNaN(rating)){
+        return false;
+    }
+    else if (rating < 0 || rating > 9){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
 
+// Valida que el precio ingresado sea mayor a $100 y un número //
+function validarPrecio(precio){
+    if (precio<valorMinimoDeSalsa || isNaN(precio))
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+
+// Carga productos en seccion de carga
+botonCarga.addEventListener("click", ()=>{
+
+    agregarProducto("/media/noImagePlaceholder.webp", inputName.value, inputDescription.value, inputRating.value, inputPepperType.value, inputPrice.value, inputStock.value);
+
+});
