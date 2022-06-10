@@ -71,7 +71,8 @@ for (let i=0; i<productos.length; i++){
     let divFicha = document.createElement("div");
     divFicha.id = "ficha_"+productos[i].idProducto;
     divFicha.className = "comprarFichaProducto";
-
+    divFicha.setAttribute("data-aos", "fade-up");
+    divFicha.setAttribute("data-aos-duration", 300*(i));
 
     // Crea DIV del producto
     let producto = document.createElement("div");

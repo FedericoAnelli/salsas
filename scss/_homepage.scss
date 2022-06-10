@@ -6,6 +6,7 @@
 
 // Contenedor texto
 .homepageMainContent{
+    position: relative;
     width: 100%;
     height: 100%;
     display: grid;
@@ -15,8 +16,24 @@
     column-gap: 0;
     color: $colorBlanco;
     text-align: center;
+    font-size: xx-large;
 }
 
 .homepageTitulo{
     align-self: flex-end;
+}
+
+.backgroundVideo{
+    height: 100vh !important;
+    width: 100vw !important;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    filter: contrast(1.3);
+    overflow: hidden !important;
 }
