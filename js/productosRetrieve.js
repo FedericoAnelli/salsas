@@ -33,7 +33,7 @@ class Carrito{
     constructor(idProducto, tituloProducto, precioProducto, cantidadMismoProducto){
         this.idProducto = idProducto;
         this.tituloProducto = tituloProducto;
-        this.precioProducto = precioProducto;
+        this.precioProducto = parseFloat(precioProducto).toFixed(2);
         this.cantidadMismoProducto = cantidadMismoProducto;
     };
 
@@ -49,7 +49,7 @@ class Producto{
         this.descripcionProducto = descripcionProducto;
         this.picorProducto = parseFloat(picorProducto);
         this.tipoDeAji = tipoDeAji;
-        this.precioProducto = parseFloat(precioProducto);
+        this.precioProducto = parseFloat(precioProducto).toFixed(2);
         this.stockProducto = stockProducto;
 
     }
@@ -114,13 +114,20 @@ for (let i=0; i<productos.length; i++){
 
 
     agregarAlCarrito.addEventListener("click", ()=>{
+        // Suma al total del carrito
+        let precioConDecimalesCorregidos = productos[i].precioProducto.toFixed(2);
         totalCarrito = totalCarrito + productos[i].precioProducto;
-        localStorage.setItem("totalCarrito", JSON.stringify(totalCarrito));
+
+        localStorage.setItem("totalCarrito", JSON.stringify(parseFloat(totalCarrito).toFixed(2)));
+
+        // Busca si el producto ya está en el carrito y lo suma si lo encuentra
         if(carrito.some(carrito => carrito.idProducto === productos[i].idProducto)){
         let index = carrito.findIndex(carrito => carrito.idProducto == productos[i].idProducto);
         carrito[index].cantidadMismoProducto = carrito[index].cantidadMismoProducto+1;
+
         }else{
-        carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto, 1));
+        // Si no encuentra el producto en el carrito, lo agrega
+        carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, precioConDecimalesCorregidos, 1));
     }
         Swal.fire({
             icon: 'success',
@@ -158,15 +165,42 @@ for (let i=0; i<productos.length; i++){
 }
 
 
+function sacarElementoDelCarrito (elemento){
+
+    let numeroElemento = carrito.map(function(carrito) {return carrito.idProducto; }).indexOf(elemento.id);
+    totalCarrito = totalCarrito - (carrito[numeroElemento].precioProducto * carrito[numeroElemento].cantidadMismoProducto);
+
+    carrito.splice(numeroElemento, 1);
+    
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("totalCarrito", JSON.stringify(parseFloat(totalCarrito).toFixed(2)));
+    swal.close();
+    let gridStart = '<div class="gridCarrito">';
+    let gridClose = '</div>';
+    Swal.fire({
+        title: "Carrito",
+        position: 'top-end',
+        html: gridStart+popularCarrito()+gridClose+'<p class="alignRight"><br><strong>Total: </strong>$'+parseFloat(totalCarrito).toFixed(2)+'</p>',
+        showCancelButton: true,
+        customClass: 'swal-height',
+        cancelButtonText: ('CANCELAR'),
+        confirmButtonText: 'COMPRAR',
+        confirmButtonColor: colorRojo,
+        background: whiteBackgroundColor,
+        showCloseButton: true,
+
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href= 'pages/checkout.html';
+        } 
+      })
+}
 
 function popularCarrito(){
     let string = "";
     for (let i = 0; i<carrito.length; i++){
-        string = string+"<p class="+"alignLeft"+">x"+carrito[i].cantidadMismoProducto+"</p><p class="+"alignCenter"+">"+carrito[i].tituloProducto+"</p><p class="+"alignRight"+">$"+(carrito[i].precioProducto*carrito[i].cantidadMismoProducto)+"</p><div id=remove_"+carrito[i].idProducto+" class="+"eliminarArticuloCarrito"+"><span class="+"material-symbols-outlined"+">close</span></div>";
-        let nombreBoton = "remove_"+carrito[i].idProducto;
-
-
-
+        string = string+"<p class="+"alignLeft"+">x"+carrito[i].cantidadMismoProducto+"</p><p class="+"alignCenter"+">"+carrito[i].tituloProducto+"</p><p class="+"alignRight"+">$"+(carrito[i].precioProducto*carrito[i].cantidadMismoProducto)+"</p><div id=remove_"+carrito[i].idProducto+" class="+"eliminarArticuloCarrito "+" onclick="+"sacarElementoDelCarrito("+carrito[i].idProducto+")"+"><span class="+"material-symbols-outlined"+">close</span></div>";
     }
     if (string.length == 0)
     {
@@ -182,7 +216,7 @@ carritoIcon.addEventListener("click", ()=>{
     Swal.fire({
         title: "Carrito",
         position: 'top-end',
-        html: gridStart+popularCarrito()+gridClose+'<p class="alignRight"><br><strong>Total: </strong>$'+totalCarrito+'</p>',
+        html: gridStart+popularCarrito()+gridClose+'<p class="alignRight"><br><strong>Total: </strong>$'+parseFloat(totalCarrito).toFixed(2)+'</p>',
         showCancelButton: true,
         customClass: 'swal-height',
         cancelButtonText: ('CANCELAR'),
@@ -198,3 +232,4 @@ carritoIcon.addEventListener("click", ()=>{
         } 
       })
 });
+

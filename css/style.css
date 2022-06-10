@@ -555,8 +555,8 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 15% 60% 18% 7%;
-      grid-template-columns: 15% 60% 18% 7%;
+  -ms-grid-columns: 15% 50% 28% 7%;
+      grid-template-columns: 15% 50% 28% 7%;
   grid-auto-rows: 10%;
   row-gap: 0;
   -webkit-column-gap: 0;

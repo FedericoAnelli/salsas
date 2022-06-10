@@ -25,7 +25,7 @@ class Producto{
         this.descripcionProducto = descripcionProducto;
         this.picorProducto = parseFloat(picorProducto);
         this.tipoDeAji = tipoDeAji;
-        this.precioProducto = parseFloat(precioProducto)*valorIva;
+        this.precioProducto = parseFloat(precioProducto).toFixed(2)*valorIva;
         this.stockProducto = stockProducto;
 
     }
@@ -52,7 +52,7 @@ function agregarProducto(imagenProducto, tituloProducto, descripcionProducto, pi
 
 
     picorProducto = parseFloat(picorProducto);
-    precioProducto = parseFloat(precioProducto);
+    precioProducto = parseFloat(precioProducto).toFixed(2);
     stockProducto = parseInt(stockProducto);
 
 
