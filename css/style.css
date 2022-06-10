@@ -576,6 +576,7 @@
 
 .noHayArticulos {
   height: 100%;
+  grid-column: 4 span;
 }
 
 .eliminarArticuloCarrito {
