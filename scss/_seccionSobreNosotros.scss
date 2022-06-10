@@ -3,19 +3,21 @@
 .sobreNosotrosContenedorGeneral{
     @include defaultContainerSeccion;
     position: relative;
+
 }
 
 
 // Grilla principal SOBRE NOSOTROS
 .sobreNosotrosMainGrid{
     height: 100%;
-    width: 100%;
+    max-width: 100%;
     margin: $headerSpace 0 0 0 !important;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 40% 40%;
     row-gap: 0;
     column-gap: 0;
+    overflow: hidden;
 }
 
 .sobreNosotrosTexto{
@@ -26,4 +28,20 @@
 .sobreNosotrosRed{
     color: $colorRojo;
     font-weight: 800;
+}
+
+.sobreNosotrosImagen{
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.sobreNosotrosLogo{
+    max-width: 100%;
+    object-fit: contain;
 }
