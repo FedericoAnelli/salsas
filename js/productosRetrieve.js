@@ -27,10 +27,11 @@ if (localStorage.getItem('carrito')){carrito = JSON.parse(localStorage.getItem('
 
 // Objetos
 class Carrito{
-    constructor(idProducto, tituloProducto, precioProducto){
+    constructor(idProducto, tituloProducto, precioProducto, cantidadMismoProducto){
         this.idProducto = idProducto;
         this.tituloProducto = tituloProducto;
         this.precioProducto = precioProducto;
+        this.cantidadMismoProducto = cantidadMismoProducto;
     };
 
 }
@@ -110,8 +111,14 @@ for (let i=0; i<productos.length; i++){
 
 
     agregarAlCarrito.addEventListener("click", ()=>{
-
-        carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto));
+        
+        if(carrito.some(carrito => carrito.idProducto === productos[i].idProducto)){
+        console.log("Encontro algo");
+        let index = carrito.findIndex(carrito => carrito.idProducto == productos[i].idProducto);
+        carrito[index].cantidadMismoProducto = carrito[index].cantidadMismoProducto+1;
+        }else{
+        carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto, 1));
+    }
         localStorage.setItem("carrito", JSON.stringify(carrito));
     });
 
@@ -145,7 +152,7 @@ function popularCarrito(){
     let string = "";
     for (let i = 0; i<carrito.length; i++){
         totalCarrito = totalCarrito + carrito[i].precioProducto;
-        string = string+"<p>"+carrito[i].tituloProducto+"</p>";
+        string = string+"<p>"+"x"+carrito[i].cantidadMismoProducto+" "+carrito[i].tituloProducto+"</p>";
     }
     if (string.length == 0)
     {
