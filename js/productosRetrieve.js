@@ -1,3 +1,6 @@
+//Variables Globales
+let totalCarrito = 0;
+
 // Elementos DOM
 let gondolaHomepage = document.getElementById("gondolaHomepage");
 let seccionCompras = document.getElementById("seccionCompras");
@@ -9,13 +12,28 @@ let popUpProductPicor = document.getElementById("popUpProductPicor");
 let popUpProductDescripcion = document.getElementById("popUpProductDescripcion");
 let popUpProductAji = document.getElementById("popUpProductAji");
 let closeButtonIcon = document.getElementById("closeButtonIcon");
+let carritoIcon = document.getElementById("carrito");
 
 
 
-// Colección de productos
+// Colecciones de productos
 let productos = JSON.parse(localStorage.getItem("listaProductos"));
+let carrito = [];
+
+
+
 
 // Objetos
+class Carrito{
+    constructor(idProducto, tituloProducto, precioProducto){
+        this.idProducto = idProducto;
+        this.tituloProducto = tituloProducto;
+        this.precioProducto = precioProducto;
+    };
+
+}
+
+
 class Producto{
     constructor(idProducto, imagenProducto, tituloProducto, descripcionProducto, picorProducto, tipoDeAji, precioProducto, stockProducto){
 
@@ -49,6 +67,12 @@ function generadorDeID(nombreProducto)
 // Completa grilla en home
 for (let i=0; i<productos.length; i++){
     
+    //Crea DIV de producto + boton
+    let divFicha = document.createElement("div");
+    divFicha.id = "ficha_"+productos[i].idProducto;
+    divFicha.className = "comprarFichaProducto";
+
+
     // Crea DIV del producto
     let producto = document.createElement("div");
     producto.id = productos[i].idProducto;
@@ -80,33 +104,61 @@ for (let i=0; i<productos.length; i++){
     agregarAlCarrito.id = productos[i].idProducto + "_Precio";
     agregarAlCarrito.className = "comprarBotones--agregarAlCarrito";
     agregarAlCarrito.innerHTML = "AGREGAR AL CARRITO";
-    producto.appendChild(agregarAlCarrito);
+
+
+    agregarAlCarrito.addEventListener("click", ()=>{
+
+        carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto));
+    });
 
     producto.addEventListener("click", ()=>{
 
-        popUpProductImagen.setAttribute("src", productos[i].imagenProducto);
-        popUpProductTitulo.innerHTML = productos[i].tituloProducto;
-        popUpProductAji.innerHTML = "Tipo de Ají: "+productos[i].tipoDeAji;
-        popUpProductPrecio.innerHTML = "$"+productos[i].precioProducto;
-        popUpProductPicor.innerHTML = "Picor: "+productos[i].picorProducto;
-        popUpProductDescripcion.innerHTML = productos[i].descripcionProducto;
-        popUpProduct.style.opacity = "100%";
-        popUpProduct.style.zIndex = "5";
 
-        seccionCompras.style.filter = "brightness(50%)";
+        Swal.fire({
+            title: productos[i].tituloProducto,
+            imageUrl: productos[i].imagenProducto,
+            html: '<div class="grillaTarjetaProducto"><p id="popUpProductPrecio" class="comprarDetalleProducto--Precio"><strong>Precio:</strong> $'+productos[i].precioProducto+'</p><p id="popUpProductAji" class="comprarDetalleProducto--TipoAji"><strong>Tipo de Ají:</strong> '+productos[i].tipoDeAji+'</p><p id="popUpProductPicor" class="comprarDetalleProducto--Picor"><strong>Picor:</strong> '+productos[i].picorProducto+'</p><p id="popUpProductDescripcion" class="comprarDetalleProducto--Descripcion">'+productos[i].descripcionProducto+'</p></div>',
+            imageWidth: "10%",
+            imageHeight: "70%",
+            width: "50%",
+            imageAlt: productos[i].tituloProducto,
+            confirmButtonText: 'AGREGAR AL CARRITO',
+            showCloseButton: true,
+            showCancelButton: true,
+            cancelButtonText: 'CANCELAR',
+          })
+
+
 
     });
 
-
-    gondolaHomepage.appendChild(producto);
+    divFicha.appendChild(producto);
+    divFicha.appendChild(agregarAlCarrito);
+    gondolaHomepage.appendChild(divFicha);
 }
 
-// Boton de cierre de ventana emergente
-closeButtonIcon.addEventListener("click", ()=>{
+function popularCarrito(){
+    let string = "";
+    for (let i = 0; i<carrito.length; i++){
+        totalCarrito = totalCarrito + carrito[i].precioProducto;
+        string = string+"<p>"+carrito[i].tituloProducto+"</p>";
+    }
+    if (string.length == 0)
+    {
+        return "<p>No hay articulos en el carrito aún.</p>";
+    }else{
+        return string;
+    }
+}
 
-    popUpProduct.style.opacity = "0%";
-    popUpProduct.style.zIndex = "-1";
-    seccionCompras.style.filter = "brightness(100%)";
+carritoIcon.addEventListener("click", ()=>{
+    Swal.fire({
+        title: "Carrito",
+        html: popularCarrito(),
+        showCancelButton: true,
+        cancelButtonText: ('CANCELAR'),
+        confirmButtonText: 'COMPRAR',
+        showCloseButton: true,
 
-
+      })
 });

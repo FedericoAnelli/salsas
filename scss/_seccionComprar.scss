@@ -46,29 +46,39 @@
 }
 
 // Grilla tarjeta de producto
+.comprarFichaProducto{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 10%;
+    column-gap: 0;
+    row-gap: 0;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 0 !important;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.comprarFichaProducto:hover{
+    transform: scale(1.1);
+}
+
 .comprarCard{
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 60% 10% 10% 10%;
+    grid-template-rows: 70% 15% 10%;
     row-gap: 0;
     column-gap: 0;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    z-index: 10;
-    cursor: pointer;
-    transition: transform 0.5s;
     &--Imagen{
         max-width: 100%;
         max-height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        align-content: center;
+        justify-self: center;
         object-fit: contain;
     }
     &--Producto{
@@ -95,10 +105,6 @@
     }
 }
 
-.comprarCard:hover{
-    transform: scale(1.1);
-}
-
 // Estilos de botones
 .comprarBotones{
     display: flex;
@@ -106,7 +112,6 @@
     align-items: center;
     justify-items: center;
     align-content: center;
-    z-index: 10;
     &--verMas{
         background-color: blue;
         color: $colorBlanco;
@@ -150,61 +155,36 @@
 }   
 
 // Estilo para detalle de producto
-$cardWidth: 90%;
+$cardWidth: 100%;
 .comprarDetalleProducto
 {
-    background-color: rgba(255, 255, 255, 0.800);
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-    top: 15%;
-    left: 20%;
-    height: 75%;
-    width: 60%;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 5% 30% 10% 4% 4% 4% 27% 8%;
-    row-gap: 1%;
-    column-gap: 0px;
-    border-radius: 12px;
-    justify-items: center;
-    backdrop-filter: blur(6px);
-    transition: opacity 0.5s;
-    cursor: pointer;
-
-    &--Imagen{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-        user-select: none;
-    }
-    &--Titulo{
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        user-select: none;
-    }
     &--Precio{
         width: $cardWidth;
         height: 100%;
+        font-size: small;
         user-select: none;
+        text-align: left;
     }
     &--TipoAji{
         width: $cardWidth;
         height: 100%;
+        font-size: small;
         user-select: none;
+        text-align: left;
     }
     &--Picor{
         width: $cardWidth;
         height: 100%;
+        font-size: small;
         user-select: none;
+        text-align: left;
     }
     &--Descripcion{
         width: $cardWidth;
         height: 100%;
         font-size: small;
         user-select: none;
+        text-align: left;
     }
 }
 

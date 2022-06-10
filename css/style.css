@@ -122,18 +122,19 @@
           flex-direction: row;
 }
 
-.comprarCard {
-  height: 100%;
-  width: 100%;
+.comprarFichaProducto {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-rows: 60% 10% 10% 10%;
-      grid-template-rows: 60% 10% 10% 10%;
-  row-gap: 0;
+  -ms-grid-rows: 80% 10%;
+      grid-template-rows: 80% 10%;
   -webkit-column-gap: 0;
           column-gap: 0;
+  row-gap: 0;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 0 !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -143,7 +144,6 @@
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  z-index: 10;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
@@ -151,21 +151,30 @@
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
+.comprarFichaProducto:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.comprarCard {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 70% 15% 10%;
+      grid-template-rows: 70% 15% 10%;
+  row-gap: 0;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+}
+
 .comprarCard--Imagen {
   max-width: 100%;
   max-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -208,11 +217,6 @@
   font-weight: lighter;
 }
 
-.comprarCard:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .comprarBotones {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,7 +230,6 @@
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  z-index: 10;
 }
 
 .comprarBotones--verMas {
@@ -294,91 +297,48 @@
           transform: scale(1.1);
 }
 
-.comprarDetalleProducto {
-  background-color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  top: 15%;
-  left: 20%;
-  height: 75%;
-  width: 60%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  -ms-grid-rows: 5% 30% 10% 4% 4% 4% 27% 8%;
-      grid-template-rows: 5% 30% 10% 4% 4% 4% 27% 8%;
-  row-gap: 1%;
-  -webkit-column-gap: 0px;
-          column-gap: 0px;
-  border-radius: 12px;
-  justify-items: center;
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  cursor: pointer;
-}
-
-.comprarDetalleProducto--Imagen {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.comprarDetalleProducto--Titulo {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
 .comprarDetalleProducto--Precio {
-  width: 90%;
-  height: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.comprarDetalleProducto--TipoAji {
-  width: 90%;
-  height: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.comprarDetalleProducto--Picor {
-  width: 90%;
-  height: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.comprarDetalleProducto--Descripcion {
-  width: 90%;
+  width: 100%;
   height: 100%;
   font-size: small;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  text-align: left;
+}
+
+.comprarDetalleProducto--TipoAji {
+  width: 100%;
+  height: 100%;
+  font-size: small;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: left;
+}
+
+.comprarDetalleProducto--Picor {
+  width: 100%;
+  height: 100%;
+  font-size: small;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: left;
+}
+
+.comprarDetalleProducto--Descripcion {
+  width: 100%;
+  height: 100%;
+  font-size: small;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: left;
 }
 
 .closeButton {
@@ -447,6 +407,26 @@
   display: flex;
 }
 
+.carritoIcono {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.carritoIcono:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
 .cargaContenedorGeneral {
   height: 100vh;
   max-width: 100vw;
@@ -460,7 +440,7 @@
   background-color: red;
   display: -ms-grid;
   display: grid;
-  height: calc(100%-$headerSpace);
+  max-height: calc(100%-$headerSpace);
   width: 100%;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
@@ -486,13 +466,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  width: 30%;
   border-radius: 12px;
   margin-right: 50% !important;
   padding-left: 2% !important;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  justify-self: flex-start;
+  max-height: 100%;
 }
 
 .cargaLabelDeCarga {
+  width: 30%;
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-end;
@@ -521,6 +506,17 @@
 .cargaBoton:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.grillaTarjetaProducto {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  grid-auto-rows: 10%;
+  row-gap: 10%;
+  -webkit-column-gap: 0;
+          column-gap: 0;
 }
 
 * {

@@ -22,7 +22,7 @@
             <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
             <li><a href="#comprar">COMPRAR</a></li>
             <li><a href="#contacto">CONTACTANOS</a></li>
-            <li><span class="material-symbols-outlined">
+            <li id="carrito"><span class="material-symbols-outlined carritoIcono">
                 shopping_cart
                 </span></li>
         </ul>
@@ -44,22 +44,7 @@
 
     <!-- ################ COMPRAR  ################ -->
     <div id="comprar" class="comprarContenedorGeneral">
-        <div id="popUpProduct" class="comprarDetalleProducto">
-            <div id="closeButtonComprar" class="closeButton"><span id="closeButtonIcon" class="material-symbols-outlined">
-                close
-                </span></div>
-            
-            <img id="popUpProductImagen" class="comprarDetalleProducto--Imagen" src="/media/fotosSalsas/tabasco.webp" alt="Tabasco">
-            <h2 id="popUpProductTitulo" class="comprarDetalleProducto--Titulo">TABASCO</h2>
-            <p id="popUpProductPrecio" class="comprarDetalleProducto--Precio">Precio: $850</p>
-            <p id="popUpProductAji" class="comprarDetalleProducto--TipoAji">Tipo de Ají: Habanero</p>
-            <p id="popUpProductPicor" class="comprarDetalleProducto--Picor">Picor: 4/9</p>
-            <p id="popUpProductDescripcion" class="comprarDetalleProducto--Descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ratione dolores ut quo quae rem quidem inventore? Officia ea soluta, architecto laudantium odit qui, distinctio sequi sint eos deleniti a!</p>
-            <button class="comprarBotones--agregarAlCarrito comprarDetalleProducto--agregarAlCarrito">AGREGAR AL CARRITO</button>
 
-
-
-        </div>
         <div id="seccionCompras" class="comprarSeccionPrincipal">
             
             <div id="gondolaHomepage" class="comprarGrillaProductos">
@@ -76,6 +61,7 @@
     <div id="contacto" class="contactoContenedorGeneral">CONTACTO</div>
     <!-- ################ CONTACTO  ################ -->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/productosRetrieve.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
