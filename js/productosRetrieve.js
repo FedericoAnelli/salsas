@@ -111,14 +111,14 @@ for (let i=0; i<productos.length; i++){
 
 
     agregarAlCarrito.addEventListener("click", ()=>{
-        
+        totalCarrito = totalCarrito + productos[i].precioProducto;
         if(carrito.some(carrito => carrito.idProducto === productos[i].idProducto)){
-        console.log("Encontro algo");
         let index = carrito.findIndex(carrito => carrito.idProducto == productos[i].idProducto);
         carrito[index].cantidadMismoProducto = carrito[index].cantidadMismoProducto+1;
         }else{
         carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto, 1));
     }
+
         localStorage.setItem("carrito", JSON.stringify(carrito));
     });
 
@@ -151,22 +151,24 @@ for (let i=0; i<productos.length; i++){
 function popularCarrito(){
     let string = "";
     for (let i = 0; i<carrito.length; i++){
-        totalCarrito = totalCarrito + carrito[i].precioProducto;
-        string = string+"<p>"+"x"+carrito[i].cantidadMismoProducto+" "+carrito[i].tituloProducto+"</p>";
+        string = string+"<p class="+"alignLeft"+">x"+carrito[i].cantidadMismoProducto+"</p><p class="+"alignCenter"+">"+carrito[i].tituloProducto+"</p><p class="+"alignRight"+">$"+(carrito[i].precioProducto*carrito[i].cantidadMismoProducto)+"</p>";
     }
     if (string.length == 0)
     {
-        return "<p>No hay articulos en el carrito aún.</p>";
+        return "<p></p><p class="+"noHayArticulos"+">No hay articulos en el carrito aún.</p><p></p>";
     }else{
         return string;
     }
 }
 
 carritoIcon.addEventListener("click", ()=>{
+    let gridStart = '<div class="gridCarrito">';
+    let gridClose = '</div>';
     Swal.fire({
         title: "Carrito",
-        html: popularCarrito(),
+        html: gridStart+popularCarrito()+gridClose+'<p class="alignRight"><br><strong>Total: </strong>$'+totalCarrito+'</p>',
         showCancelButton: true,
+        customClass: 'swal-height',
         cancelButtonText: ('CANCELAR'),
         confirmButtonText: 'COMPRAR',
         showCloseButton: true,

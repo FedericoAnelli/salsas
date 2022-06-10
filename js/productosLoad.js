@@ -1,5 +1,3 @@
-
-
 // Variables globales
 const valorIva = 1.21;
 const valorMinimoDeSalsa = 100;
@@ -27,7 +25,7 @@ class Producto{
         this.descripcionProducto = descripcionProducto;
         this.picorProducto = parseFloat(picorProducto);
         this.tipoDeAji = tipoDeAji;
-        this.precioProducto = parseFloat(precioProducto);
+        this.precioProducto = parseFloat(precioProducto)*valorIva;
         this.stockProducto = stockProducto;
 
     }
