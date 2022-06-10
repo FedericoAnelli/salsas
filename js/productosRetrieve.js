@@ -17,8 +17,10 @@ let carritoIcon = document.getElementById("carrito");
 
 
 // Colecciones de productos
-let productos = JSON.parse(localStorage.getItem("listaProductos"));
+let productos = [];
+if (localStorage.getItem('listaProductos')){productos = JSON.parse(localStorage.getItem('listaProductos'));};
 let carrito = [];
+if (localStorage.getItem('carrito')){carrito = JSON.parse(localStorage.getItem('carrito'));};
 
 
 
@@ -110,6 +112,7 @@ for (let i=0; i<productos.length; i++){
     agregarAlCarrito.addEventListener("click", ()=>{
 
         carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto));
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     });
 
     producto.addEventListener("click", ()=>{
