@@ -59,13 +59,18 @@
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-rows: 40% 20% 40%;
-      grid-template-rows: 40% 20% 40%;
+  -ms-grid-rows: 45% 10% 45%;
+      grid-template-rows: 45% 10% 45%;
   row-gap: 0;
   -webkit-column-gap: 0;
           column-gap: 0;
   color: white;
   text-align: center;
+}
+
+.homepageTitulo {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .sobreNosotrosContenedorGeneral {

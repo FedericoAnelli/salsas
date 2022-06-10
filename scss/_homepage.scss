@@ -10,9 +10,13 @@
     height: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 40% 20% 40%;
+    grid-template-rows: 45% 10% 45%;
     row-gap: 0;
     column-gap: 0;
     color: $colorBlanco;
     text-align: center;
+}
+
+.homepageTitulo{
+    align-self: flex-end;
 }
