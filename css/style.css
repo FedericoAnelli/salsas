@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .headerMainContainer {
   position: fixed;
   height: 10%;
   color: black;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,6 +49,23 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: black;
+}
+
+.homepageMainContent {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 40% 20% 40%;
+      grid-template-rows: 40% 20% 40%;
+  row-gap: 0;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+  color: white;
+  text-align: center;
 }
 
 .sobreNosotrosContenedorGeneral {
@@ -71,7 +89,7 @@
 .comprarSeccionPrincipal {
   position: relative;
   margin: 10% 0 2% 0 !important;
-  background-color: red;
+  background-color: white;
   display: -ms-grid;
   display: grid;
   height: calc(100%-$headerSpace);
@@ -233,12 +251,11 @@
 }
 
 .comprarBotones--verMas {
-  background-color: blue;
+  background-color: #bb2e23;
   color: white;
   font-weight: bolder;
   width: 15%;
   height: 70%;
-  border-radius: 12px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -258,10 +275,9 @@
 .comprarBotones--textoVerMas {
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: #bb2e23;
   color: white;
   font-weight: bolder;
-  border-radius: 12px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -276,9 +292,8 @@
 .comprarBotones--agregarAlCarrito {
   width: 70%;
   height: 100%;
-  background-color: blue;
+  background-color: #bb2e23;
   color: white;
-  border-radius: 12px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -357,7 +372,7 @@
 .comprarExtendida {
   position: relative;
   margin-top: 10% !important;
-  background-color: red;
+  background-color: #bb2e23;
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -437,7 +452,7 @@
 
 .cargaSeccionPrincipal {
   margin: 10% 0 2% 0 !important;
-  background-color: red;
+  background-color: #bb2e23;
   display: -ms-grid;
   display: grid;
   max-height: calc(100%-$headerSpace);
@@ -467,7 +482,6 @@
   display: -ms-flexbox;
   display: flex;
   width: 30%;
-  border-radius: 12px;
   margin-right: 50% !important;
   padding-left: 2% !important;
   -ms-flex-item-align: start;
@@ -488,9 +502,8 @@
   grid-column: 2 span;
   width: 30%;
   height: 50%;
-  background-color: blue;
+  background-color: #bb2e23;
   color: white;
-  border-radius: 12px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -527,7 +540,7 @@
 
 body {
   max-width: 100vw;
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 li {
@@ -536,5 +549,6 @@ li {
 
 a {
   text-decoration: none;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,18 @@
 // Contenedor general seccion HOMEPAGE
 .homepageContenedorGeneral{
     @include defaultContainerSeccion;
+    background-color: $colorNegro;
+}
+
+// Contenedor texto
+.homepageMainContent{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 20% 40%;
+    row-gap: 0;
+    column-gap: 0;
+    color: $colorBlanco;
+    text-align: center;
 }

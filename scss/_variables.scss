@@ -8,11 +8,11 @@ $colorVerde: green;
 $colorNegro: black;
 $colorAmarillo: yellow;
 $colorBlanco: white;
-$colorRojo: red;
+$colorRojo: rgb(187, 46, 35);;
 
 // Fonts
 $fontColorMain: black;
-$fontFamilyMain: 'Nunito', sans-serif;
+$fontFamilyMain: 'Montserrat', sans-serif;
 
 // Base para armar cualquier nueva seccion en la homepage
 @mixin defaultContainerSeccion {
