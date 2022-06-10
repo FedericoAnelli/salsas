@@ -1,5 +1,7 @@
 //Variables Globales
 let totalCarrito = 0;
+let colorRojo = "#BB2E23";
+let whiteBackgroundColor = "#ffffffe6";
 
 // Elementos DOM
 let gondolaHomepage = document.getElementById("gondolaHomepage");
@@ -118,7 +120,12 @@ for (let i=0; i<productos.length; i++){
         }else{
         carrito.push(new Carrito (productos[i].idProducto, productos[i].tituloProducto, productos[i].precioProducto, 1));
     }
-
+        Swal.fire({
+            icon: 'success',
+            title: 'Carga exitosa',
+            text: 'Se ha agregado el producto al carrito de compras.',
+            confirmButtonText: 'Continuar'
+        })
         localStorage.setItem("carrito", JSON.stringify(carrito));
     });
 
@@ -133,10 +140,10 @@ for (let i=0; i<productos.length; i++){
             imageHeight: "70%",
             width: "50%",
             imageAlt: productos[i].tituloProducto,
-            confirmButtonText: 'AGREGAR AL CARRITO',
-            showCloseButton: true,
-            showCancelButton: true,
-            cancelButtonText: 'CANCELAR',
+            confirmButtonText: 'CONTINUAR',
+            confirmButtonColor: colorRojo,
+            background: whiteBackgroundColor,
+            showCloseButton: true
           })
 
 
@@ -166,12 +173,20 @@ carritoIcon.addEventListener("click", ()=>{
     let gridClose = '</div>';
     Swal.fire({
         title: "Carrito",
+        position: 'top-end',
         html: gridStart+popularCarrito()+gridClose+'<p class="alignRight"><br><strong>Total: </strong>$'+totalCarrito+'</p>',
         showCancelButton: true,
         customClass: 'swal-height',
         cancelButtonText: ('CANCELAR'),
         confirmButtonText: 'COMPRAR',
+        confirmButtonColor: colorRojo,
+        background: whiteBackgroundColor,
         showCloseButton: true,
 
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          window.location.href= 'pages/checkout.html';
+        } 
       })
 });

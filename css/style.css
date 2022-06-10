@@ -17,7 +17,7 @@
   -ms-flex-line-pack: center;
       align-content: center;
   width: 100%;
-  z-index: 99999999;
+  z-index: 100;
 }
 
 .headerMenuGrid {
@@ -571,7 +571,7 @@
 }
 
 .swal-height {
-  height: 60vh;
+  height: 95vh;
 }
 
 .noHayArticulos {
