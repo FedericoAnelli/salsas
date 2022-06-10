@@ -555,8 +555,8 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 60% 20%;
-      grid-template-columns: 20% 60% 20%;
+  -ms-grid-columns: 15% 60% 18% 7%;
+      grid-template-columns: 15% 60% 18% 7%;
   grid-auto-rows: 10%;
   row-gap: 0;
   -webkit-column-gap: 0;
@@ -576,6 +576,24 @@
 
 .noHayArticulos {
   height: 100%;
+}
+
+.eliminarArticuloCarrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-variation-settings: 'wght' 700 !important;
+}
+
+.eliminarArticuloCarrito:hover {
+  color: #bb2e23;
 }
 
 .cargaContenedorGeneral {

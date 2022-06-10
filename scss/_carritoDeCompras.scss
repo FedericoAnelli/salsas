@@ -32,7 +32,7 @@
     height: 30vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 15% 60% 18% 7%;
     grid-auto-rows: 10%;
     row-gap: 0;
     column-gap: 0;
@@ -51,4 +51,16 @@
 // Estilo del mensaje de "no hay articulos"
 .noHayArticulos{
     height: 100%;
+}
+
+.eliminarArticuloCarrito{
+    display: flex;
+    transition: color 0.5s;
+    cursor: pointer;
+    user-select: none;
+    font-variation-settings: 'wght' 700 !important;
+}
+
+.eliminarArticuloCarrito:hover{
+    color: $colorRojo;
 }

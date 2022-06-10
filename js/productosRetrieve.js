@@ -1,5 +1,6 @@
 //Variables Globales
 let totalCarrito = 0;
+if (localStorage.getItem('totalCarrito')){totalCarrito = JSON.parse(localStorage.getItem('totalCarrito'));};
 let colorRojo = "#BB2E23";
 let whiteBackgroundColor = "#ffffffe6";
 
@@ -114,6 +115,7 @@ for (let i=0; i<productos.length; i++){
 
     agregarAlCarrito.addEventListener("click", ()=>{
         totalCarrito = totalCarrito + productos[i].precioProducto;
+        localStorage.setItem("totalCarrito", JSON.stringify(totalCarrito));
         if(carrito.some(carrito => carrito.idProducto === productos[i].idProducto)){
         let index = carrito.findIndex(carrito => carrito.idProducto == productos[i].idProducto);
         carrito[index].cantidadMismoProducto = carrito[index].cantidadMismoProducto+1;
@@ -155,10 +157,16 @@ for (let i=0; i<productos.length; i++){
     gondolaHomepage.appendChild(divFicha);
 }
 
+
+
 function popularCarrito(){
     let string = "";
     for (let i = 0; i<carrito.length; i++){
-        string = string+"<p class="+"alignLeft"+">x"+carrito[i].cantidadMismoProducto+"</p><p class="+"alignCenter"+">"+carrito[i].tituloProducto+"</p><p class="+"alignRight"+">$"+(carrito[i].precioProducto*carrito[i].cantidadMismoProducto)+"</p>";
+        string = string+"<p class="+"alignLeft"+">x"+carrito[i].cantidadMismoProducto+"</p><p class="+"alignCenter"+">"+carrito[i].tituloProducto+"</p><p class="+"alignRight"+">$"+(carrito[i].precioProducto*carrito[i].cantidadMismoProducto)+"</p><div id=remove_"+carrito[i].idProducto+" class="+"eliminarArticuloCarrito"+"><span class="+"material-symbols-outlined"+">close</span></div>";
+        let nombreBoton = "remove_"+carrito[i].idProducto;
+
+
+
     }
     if (string.length == 0)
     {
