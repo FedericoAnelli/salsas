@@ -161,6 +161,6 @@ function validarPrecio(precio){
 // Carga productos en seccion de carga
 botonCarga.addEventListener("click", ()=>{
 
-    agregarProducto("/media/noImagePlaceholder.webp", inputName.value, inputDescription.value, inputRating.value, inputPepperType.value, inputPrice.value, inputStock.value);
+    agregarProducto("media/noImagePlaceholder.webp", inputName.value, inputDescription.value, inputRating.value, inputPepperType.value, inputPrice.value, inputStock.value);
 
 });

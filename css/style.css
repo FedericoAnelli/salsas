@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .headerMainContainer {
   position: fixed;
-  height: 10%;
+  height: 15%;
   color: black;
   background-color: white;
   display: -webkit-box;
@@ -41,6 +41,20 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.headerLogoClass {
+  width: 55%;
+  height: auto;
+}
+
+.logoPositioning {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .homepageContenedorGeneral {
@@ -103,7 +117,7 @@
 .sobreNosotrosMainGrid {
   height: 100%;
   width: 100%;
-  margin: 10% 0 0 0 !important;
+  margin: 15% 0 0 0 !important;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100%;
@@ -137,7 +151,7 @@
 
 .comprarSeccionPrincipal {
   position: relative;
-  margin: 10% 0 2% 0 !important;
+  margin: 15% 0 2% 0 !important;
   background-color: white;
   display: -ms-grid;
   display: grid;
@@ -420,7 +434,7 @@
 
 .comprarExtendida {
   position: relative;
-  margin-top: 10% !important;
+  margin-top: 15% !important;
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -499,7 +513,7 @@
 }
 
 .cargaSeccionPrincipal {
-  margin: 10% 0 2% 0 !important;
+  margin: 15% 0 2% 0 !important;
   background-color: #bb2e23;
   display: -ms-grid;
   display: grid;
@@ -598,5 +612,11 @@ li {
 a {
   text-decoration: none;
   color: black;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: #bb2e23;
 }
 /*# sourceMappingURL=style.css.map */

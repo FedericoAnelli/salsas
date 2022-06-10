@@ -26,5 +26,10 @@ li{
 a{
     text-decoration: none;
     color: $colorNegro;
+    transition: color 0.5s;
+}
+
+a:hover{
+    color: $colorRojo;
 }
 
