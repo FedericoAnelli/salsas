@@ -22,25 +22,6 @@ let carritoIcon = document.getElementById("carrito");
 let productos = [];
 //if (localStorage.getItem('listaProductos')){productos = JSON.parse(localStorage.getItem('listaProductos'));};
 
-async function pedirProductos(){
-const resp = await fetch("data/initialConfig.json")
-const data = await resp.json();
-
-    for (let i = 0; i<data.length; i++)
-    {
-    productos.push(data[i]);
-    }
-
-
-
-return true;
-}
-
-pedirProductos();
-
-
-
-
 
 let carrito = [];
 if (localStorage.getItem('carrito')){carrito = JSON.parse(localStorage.getItem('carrito'));};
@@ -91,7 +72,19 @@ function generadorDeID(nombreProducto)
 }
 
 // Completa grilla en home
-setTimeout(function(){
+async function pedirProductos(){
+    const resp = await fetch("data/initialConfig.json");
+    const data = await resp.json();
+    
+    
+    for (let i = 0; i<data.length; i++)
+    {
+        productos.push(data[i]);
+    }
+    
+    
+
+
 for (let i=0; i<productos.length; i++){
 
     //Crea DIV de producto + boton
@@ -184,8 +177,10 @@ for (let i=0; i<productos.length; i++){
     divFicha.appendChild(producto);
     divFicha.appendChild(agregarAlCarrito);
     gondolaHomepage.appendChild(divFicha);
+};
 }
-}, 100);
+
+pedirProductos();
 
 function sacarElementoDelCarrito (elemento){
     // Busca el elemento en el carrito en base a su ID
