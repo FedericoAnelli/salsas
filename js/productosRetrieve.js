@@ -130,7 +130,6 @@ for (let i=0; i<productos.length; i++){
     agregarAlCarrito.addEventListener("click", ()=>{
         // Suma al total del carrito
         totalCarrito = totalCarrito + productos[i].precioProducto;
-        console.log(totalCarrito);
         localStorage.setItem("totalCarrito", JSON.stringify(parseFloat(totalCarrito).toFixed(2)));
         // Busca si el producto ya está en el carrito y lo suma si lo encuentra
         if(carrito.some(carrito => carrito.idProducto === productos[i].idProducto)){

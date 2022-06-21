@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Salsas Picantes - Comprar</title>
 </head>
-<body id="bodyComprarExtendido">
+<body>
     
     <!-- ################ HEADER  ################ -->
     <header class="headerMainContainer">
 
         <ul class="headerMenuGrid">
             <li class="logoPositioning"><img src="./media/interfaz/logoNegro.svg" class="headerLogoClass" alt="Logo Nueve Vidas"></li>
-            <li><a href="./index#">HOME</a></li>
-            <li><a href="./index#sobreNosotros">SOBRE NOSOTROS</a></li>
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./index.html#sobreNosotros">SOBRE NOSOTROS</a></li>
             <li><a href="./pages/comprar.html">COMPRAR</a></li>
-            <li><a href="./index#contacto">CONTACTANOS</a></li>
+            <li><a href="./index.html#contacto">CONTACTANOS</a></li>
             <li id="carrito"><span class="material-symbols-outlined carritoIcono">
                 shopping_cart
                 </span></li>
@@ -32,11 +32,23 @@
     </header>
     <!-- ################ HEADER  ################ -->
 
-    <p>PAGINA CHECKOUT</p>
+    <div class="checkoutContenedorGeneral">
+
+        <div id="grillaListado" class="checkoutMainGrid">
+            <h1 class="checkoutHeader">Carrito</h1>
 
 
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <script src="js/checkout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/productosRetrieve.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

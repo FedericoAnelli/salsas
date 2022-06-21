@@ -1,0 +1,54 @@
+// Contenedor general seccion CHECKOUT
+.checkoutContenedorGeneral{
+    @include defaultContainerSeccion;
+    display: flex;
+    justify-content: center;
+}
+
+// Grilla principal CHECKOUT
+.checkoutMainGrid{
+    height: 100%;
+    width: 100%;
+    margin: $headerSpace 10% $margenBottom 5% !important;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-auto-rows: 10%;
+    row-gap: 0;
+    column-gap: 0;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
+}
+
+//Titulo carrito de compra
+.checkoutHeader{
+    grid-column:  3 span;
+    justify-self: flex-start;
+    color: $colorRojo;
+    padding: 5% 0% 10% 0%;
+}
+
+// Fila para incluir el total de la compra
+.checkoutFilaTotal{
+    grid-column:  3 span;
+    justify-self: flex-end;
+}
+
+// Boton finalizar compra
+.checkoutBotonFinalizar{
+    grid-column:  3 span;
+    justify-self: flex-end;
+    background-color: $colorRojo;
+    color: $colorBlanco;
+    font-family: $fontFamilyMain;
+    font-weight: bold;
+    height: 60%;
+    width: 15%;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.5s;
+}
+
+.checkoutBotonFinalizar:hover{
+    transform: scale(1.1);
+}
