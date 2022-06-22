@@ -5,7 +5,7 @@
 
 // Espacio de la seccion donde volcar contenido
 .cargaSeccionPrincipal{
-    margin: $headerSpace 0 $margenBottom 0 !important;
+    margin: $headerSpace 10% $margenBottom 0 !important;
     display: grid;
     max-height: $heightContentSections;
     width: 100%;

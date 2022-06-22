@@ -606,7 +606,7 @@
 }
 
 .cargaSeccionPrincipal {
-  margin: 15% 0 2% 0 !important;
+  margin: 15% 10% 2% 0 !important;
   display: -ms-grid;
   display: grid;
   max-height: calc(80%-$headerSpace);
