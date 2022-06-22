@@ -705,8 +705,8 @@
   margin: 15% 10% 2% 5% !important;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 60% 20%;
-      grid-template-columns: 20% 60% 20%;
+  -ms-grid-columns: 20% 55% 20% 5%;
+      grid-template-columns: 20% 55% 20% 5%;
   grid-auto-rows: 10%;
   row-gap: 0;
   -webkit-column-gap: 0;
@@ -722,19 +722,19 @@
 }
 
 .checkoutHeader {
-  grid-column: 3 span;
+  grid-column: 4 span;
   justify-self: flex-start;
   color: #bb2e23;
   padding: 5% 0% 10% 0%;
 }
 
 .checkoutFilaTotal {
-  grid-column: 3 span;
+  grid-column: 4 span;
   justify-self: flex-end;
 }
 
 .checkoutBotonFinalizar {
-  grid-column: 3 span;
+  grid-column: 4 span;
   justify-self: flex-end;
   background-color: #bb2e23;
   color: white;
@@ -756,6 +756,25 @@
 .checkoutBotonFinalizar:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.checkoutBotonEliminarArticulo {
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 5% !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.checkoutBotonEliminarArticulo:hover {
+  color: #bb2e23;
 }
 
 * {

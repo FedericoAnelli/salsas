@@ -11,7 +11,7 @@
     width: 100%;
     margin: $headerSpace 10% $margenBottom 5% !important;
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 55% 20% 5%;
     grid-auto-rows: 10%;
     row-gap: 0;
     column-gap: 0;
@@ -22,7 +22,7 @@
 
 //Titulo carrito de compra
 .checkoutHeader{
-    grid-column:  3 span;
+    grid-column:  4 span;
     justify-self: flex-start;
     color: $colorRojo;
     padding: 5% 0% 10% 0%;
@@ -30,13 +30,13 @@
 
 // Fila para incluir el total de la compra
 .checkoutFilaTotal{
-    grid-column:  3 span;
+    grid-column:  4 span;
     justify-self: flex-end;
 }
 
 // Boton finalizar compra
 .checkoutBotonFinalizar{
-    grid-column:  3 span;
+    grid-column:  4 span;
     justify-self: flex-end;
     background-color: $colorRojo;
     color: $colorBlanco;
@@ -51,4 +51,18 @@
 
 .checkoutBotonFinalizar:hover{
     transform: scale(1.1);
+}
+
+// Boton eliminar articulo
+.checkoutBotonEliminarArticulo{
+    justify-self: flex-end;
+    align-self: center;
+    padding-top: 5% !important;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.checkoutBotonEliminarArticulo:hover{
+    color: $colorRojo;
 }
