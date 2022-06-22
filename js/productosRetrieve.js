@@ -20,7 +20,7 @@ let carritoIcon = document.getElementById("carrito");
 
 // Colecciones de productos
 let productos = [];
-//if (localStorage.getItem('listaProductos')){productos = JSON.parse(localStorage.getItem('listaProductos'));};
+if (localStorage.getItem('listaProductos')){productos = JSON.parse(localStorage.getItem('listaProductos'));};
 
 
 let carrito = [];

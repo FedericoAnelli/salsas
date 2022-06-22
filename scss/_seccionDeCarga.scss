@@ -6,7 +6,6 @@
 // Espacio de la seccion donde volcar contenido
 .cargaSeccionPrincipal{
     margin: $headerSpace 0 $margenBottom 0 !important;
-    background-color: $colorRojo;
     display: grid;
     max-height: $heightContentSections;
     width: 100%;
@@ -23,26 +22,27 @@
 // Estilo para campos de carga
 .cargaCampoTextoEstilo{
     display: flex;
-    width: 30%;
+    width: 63.3%;
     margin-right: 50% !important;
     padding-left: 2% !important;
-    align-self: flex-start;
+    align-self: center;
     justify-self: flex-start;
     max-height: 100%;
+    border: 1px solid $colorRojo;
 }
 
 // Estilo para textos de carga
 .cargaLabelDeCarga{
     width: 30%;
-    align-self: flex-end;
+    align-self: center;
     justify-self: flex-end;
 }
 
 // Boton para cargar
 .cargaBoton{
-    margin-top: 5% !important;
+    margin: 5% 0% 0% 18%!important;
     grid-column:  2 span;
-    width: 30%;
+    width: 50%;
     height: 50%;
     background-color: $colorRojo;
     color: $colorBlanco;
@@ -63,4 +63,10 @@
     grid-auto-rows: 10%;
     row-gap: 10%;
     column-gap: 0;
+}
+
+// Estilos dropzone
+.centerDropzone{
+    align-self: flex-start;
+    justify-self: flex-start;
 }

@@ -607,7 +607,6 @@
 
 .cargaSeccionPrincipal {
   margin: 15% 0 2% 0 !important;
-  background-color: #bb2e23;
   display: -ms-grid;
   display: grid;
   max-height: calc(80%-$headerSpace);
@@ -636,26 +635,28 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
+  width: 63.3%;
   margin-right: 50% !important;
   padding-left: 2% !important;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  -ms-flex-item-align: center;
+      align-self: center;
   justify-self: flex-start;
   max-height: 100%;
+  border: 1px solid #bb2e23;
 }
 
 .cargaLabelDeCarga {
   width: 30%;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   justify-self: flex-end;
 }
 
 .cargaBoton {
-  margin-top: 5% !important;
+  margin: 5% 0% 0% 18% !important;
   grid-column: 2 span;
-  width: 30%;
+  width: 50%;
   height: 50%;
   background-color: #bb2e23;
   color: white;
@@ -685,6 +686,12 @@
   row-gap: 10%;
   -webkit-column-gap: 0;
           column-gap: 0;
+}
+
+.centerDropzone {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  justify-self: flex-start;
 }
 
 .checkoutContenedorGeneral {
