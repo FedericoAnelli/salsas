@@ -1,0 +1,24 @@
+// Tamaño del icono
+.clippingSetupBase{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    mask-image: url("/media/interfaz/cutoutCat.svg");
+    background-color: white;
+    z-index: 1;
+}
+
+.customDiv{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+
+    background-color: red;
+    z-index: 0;
+}
+
+.containerDiv{
+    position: relative;
+    height: 50vw;
+    width: 50vh;
+}
