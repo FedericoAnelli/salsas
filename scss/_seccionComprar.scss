@@ -3,6 +3,7 @@
     @include defaultContainerSeccion;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 // Espacio de la seccion donde volcar contenido

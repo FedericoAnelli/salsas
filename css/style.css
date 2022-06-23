@@ -179,6 +179,7 @@
   display: flex;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .comprarSeccionPrincipal {
@@ -525,6 +526,8 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  z-index: -900;
+  background-color: #fafafa;
 }
 
 .contactoContenidoPrincipal {

@@ -5,6 +5,8 @@
     display: flex;
     position: relative;
     overflow: hidden;
+    z-index: -900;
+    background-color: rgb(250, 250, 250);
 }
 
 // Contenido Contacto
