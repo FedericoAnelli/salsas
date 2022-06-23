@@ -184,7 +184,6 @@
 .comprarSeccionPrincipal {
   position: relative;
   margin: 15% 0 2% 0 !important;
-  background-color: white;
   display: -ms-grid;
   display: grid;
   height: calc(80%-$headerSpace);
@@ -204,8 +203,8 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (25%)[4];
-      grid-template-columns: repeat(4, 25%);
+  -ms-grid-columns: (25%)[3];
+      grid-template-columns: repeat(3, 25%);
   -ms-grid-rows: (50%)[2];
       grid-template-rows: repeat(2, 50%);
   row-gap: 0;
@@ -393,7 +392,7 @@
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-  font-weight: bold;
+  font-weight: 900;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -508,12 +507,87 @@
   position: relative;
 }
 
+.comprarCatPaw {
+  position: absolute;
+  height: auto;
+  max-width: 300px;
+  min-width: 300px;
+  bottom: -10%;
+  right: -2%;
+  z-index: -10;
+}
+
 .contactoContenedorGeneral {
-  height: 100vh;
-  max-width: 100vw;
+  height: 130vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactoContenidoPrincipal {
+  margin: 15% 40% 2% 5% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contactoFormularioGrid {
+  padding: 5% 0% 0% 0% !important;
+  display: -ms-grid;
+  display: grid;
+  width: 80%;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  grid-auto-rows: 10%;
+  row-gap: 1%;
+  -webkit-column-gap: 2%;
+          column-gap: 2%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+.contactoTextoSeparador {
+  border-bottom: 1px solid black;
+}
+
+.contactoInputGeneralStyling {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.contactoTextAreaHeight {
+  grid-row: 3 span;
+  margin-bottom: 5%;
+}
+
+.contactoButtonEnviar {
+  margin: 5% 0 5% 0 !important;
+  grid-row: 3 span;
+  background-color: #bb2e23;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: bold;
+  width: 30%;
+  height: 30%;
+}
+
+.contactoManoGato {
+  position: absolute;
+  height: auto;
+  min-width: 600px;
+  max-width: 600px;
+  top: 20%;
+  left: 30vw;
+  z-index: -10;
 }
 
 .carritoIcono {
@@ -782,6 +856,50 @@
 
 .checkoutBotonEliminarArticulo:hover {
   color: #bb2e23;
+}
+
+.footerMainContainer {
+  height: 20vh;
+  width: 100vw;
+  background-color: #bb2e23;
+  overflow: hidden;
+}
+
+.footerMainGrid {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerNameComision {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.footerLogo {
+  height: auto;
+  width: 20%;
+  color: white;
+  padding-left: 5%;
+}
+
+.footerName {
+  color: white;
 }
 
 * {

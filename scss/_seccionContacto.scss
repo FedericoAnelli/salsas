@@ -1,4 +1,67 @@
 // Contenedor general seccion CONTACTO
 .contactoContenedorGeneral{
-    @include defaultContainerSeccion;
+    height: 130vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+// Contenido Contacto
+.contactoContenidoPrincipal{
+    margin: $headerSpace 40% $margenBottom 5% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+// Contenedor formulario
+.contactoFormularioGrid{
+    padding: 5% 0% 0% 0% !important;
+    display: grid;
+    width: 80%;
+    grid-template-columns: 100%;
+    grid-auto-rows: 10%;
+    row-gap: 1%;
+    column-gap: 2%;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+// Textos
+.contactoTextoSeparador{
+    border-bottom: 1px solid $colorNegro;
+}
+
+//Input fields styling
+.contactoInputGeneralStyling{
+    border: 1px solid $colorNegro;
+    border-radius: 3px;
+}
+
+.contactoTextAreaHeight{
+    grid-row: 3 span;
+    margin-bottom: 5%;
+}
+
+.contactoButtonEnviar{
+    margin: 5% 0 5% 0 !important;
+    grid-row: 3 span;
+    background-color: $colorRojo;
+    font-family: $fontFamilyMain;
+    color: $colorBlanco;
+    font-weight: bold;
+    width: 30%;
+    height: 30%;
+}
+
+// Mano gato
+.contactoManoGato{
+    position: absolute;
+    height: auto;
+    min-width: 600px;
+    max-width: 600px;
+    top: 20%;
+    left: 30vw;
+    z-index: -10;
 }

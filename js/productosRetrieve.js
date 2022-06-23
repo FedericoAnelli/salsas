@@ -124,7 +124,7 @@ for (let i=0; i<productos.length; i++){
     let agregarAlCarrito = document.createElement("button");
     agregarAlCarrito.id = productos[i].idProducto + "_Precio";
     agregarAlCarrito.className = "comprarBotones--agregarAlCarrito";
-    agregarAlCarrito.innerHTML = "AGREGAR AL CARRITO";
+    agregarAlCarrito.innerHTML = "COMPRAR";
 
 
     agregarAlCarrito.addEventListener("click", ()=>{
