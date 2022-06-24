@@ -909,8 +909,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  -webkit-mask-image: url("/media/interfaz/cutoutCat.svg");
-          mask-image: url("/media/interfaz/cutoutCat.svg");
+  -webkit-mask-image: url("./media/interfaz/cutoutCat.svg");
+          mask-image: url("./media/interfaz/cutoutCat.svg");
   background-color: #f4f4f4;
   z-index: 1;
 }
