@@ -4,21 +4,25 @@
     height: 100%;
     width: 100%;
     mask-image: url("/media/interfaz/cutoutCat.svg");
-    background-color: white;
+    background-color: rgb(244, 244, 244);
     z-index: 1;
 }
 
 .customDiv{
     position: absolute;
     height: 100%;
-    width: 80%;
-
-    background-color: red;
+    background-color: black;
     z-index: 0;
 }
 
 .containerDiv{
     position: relative;
-    height: 50vw;
-    width: 50vh;
+    height: 100%;
+    width: 180px;
+}
+
+.containerPicor{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 100%;
 }

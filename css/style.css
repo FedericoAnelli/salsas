@@ -911,22 +911,30 @@
   width: 100%;
   -webkit-mask-image: url("/media/interfaz/cutoutCat.svg");
           mask-image: url("/media/interfaz/cutoutCat.svg");
-  background-color: white;
+  background-color: #f4f4f4;
   z-index: 1;
 }
 
 .customDiv {
   position: absolute;
   height: 100%;
-  width: 80%;
-  background-color: red;
+  background-color: black;
   z-index: 0;
 }
 
 .containerDiv {
   position: relative;
-  height: 50vw;
-  width: 50vh;
+  height: 100%;
+  width: 180px;
+}
+
+.containerPicor {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
 }
 
 * {

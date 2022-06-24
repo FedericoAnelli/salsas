@@ -153,12 +153,12 @@ for (let i=0; i<productos.length; i++){
     });
     // Agrega click en producto para obtener más detalles del mismo
     producto.addEventListener("click", ()=>{
-
+        let picorIconos = productos[i].picorProducto * 10;
 
         Swal.fire({
             title: productos[i].tituloProducto,
             imageUrl: productos[i].imagenProducto,
-            html: '<div class="grillaTarjetaProducto"><p id="popUpProductPrecio" class="comprarDetalleProducto--Precio"><strong>Precio:</strong> $'+productos[i].precioProducto+'</p><p id="popUpProductAji" class="comprarDetalleProducto--TipoAji"><strong>Tipo de Ají:</strong> '+productos[i].tipoDeAji+'</p><p id="popUpProductPicor" class="comprarDetalleProducto--Picor"><strong>Picor:</strong> '+productos[i].picorProducto+'</p><p id="popUpProductDescripcion" class="comprarDetalleProducto--Descripcion">'+productos[i].descripcionProducto+'</p></div>',
+            html: '<div class="grillaTarjetaProducto"><p id="popUpProductPrecio" class="comprarDetalleProducto--Precio"><strong>Precio:</strong> $'+productos[i].precioProducto+'</p><p id="popUpProductAji" class="comprarDetalleProducto--TipoAji"><strong>Tipo de Ají:</strong> '+productos[i].tipoDeAji+'</p><div class="containerPicor"><p id="popUpProductPicor" class="comprarDetalleProducto--Picor"><strong>Picor:</strong><div class="containerDiv"><div class="customDiv" style="width: '+picorIconos+'%"></div><div class="clippingSetupBase"></div></div></p></div><p id="popUpProductDescripcion" class="comprarDetalleProducto--Descripcion">'+productos[i].descripcionProducto+'</p></div>',
             imageWidth: "10%",
             imageHeight: "70%",
             width: "50%",
